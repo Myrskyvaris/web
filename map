@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glen Oaks Community College Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Glen Oaks Community College</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map with zoom level set to 18 for more detail
+        var map = L.map('map').setView([41.89240, -85.49668], 18); // Coordinates for Glen Oaks Community College
+
+        // Set up the tile layer -- humanitraian version
+    //  L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+     //       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Evan Dembskey codemonkey'
+      //  }).addTo(map);
+		
+		
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Evan Dembskey coder'
+}).addTo(map);
+
+
+
+
+
+        // Add a marker for the college
+        L.marker([41.89252, -85.49678]).addTo(map)
+            .bindPopup('<b>Glen Oaks Community College</b><br><b>62249 Shimmel Road, Centreville, MI 49032</b>')
+            .openPopup();
+    </script>
+
+</body>
+</html>
